@@ -5,10 +5,10 @@ import checkToken from "../middlewares/check-token.js";
 
 const router=Router();
 
-router.get( '/posts' , controller.ADMIN);
-router.post( '/login' , controller.LOGIN);
-router.delete('/post/:id', controller.DELETE);
-router.put('/post/:id' , controller.PUT);
+router.get( '/posts' ,checkToken, controller.ADMIN);
+router.post( '/login' , checkToken,validate, controller.LOGIN);
+router.delete('/post/:id',checkToken, controller.DELETE);
+router.put('/post/:id' ,checkToken, controller.PUT);
 
 
 

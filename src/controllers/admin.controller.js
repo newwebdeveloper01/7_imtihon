@@ -1,6 +1,7 @@
 import { read, write } from "../utils/model.js";
 import jwt from "../utils/jwt.js";
 import { resolve } from "path";
+import { unlinkSync } from "fs";
 import { BadRequestError, InternalServerError } from "../utils/error.js";
 
 const ADMIN = (req, res, next) => {
@@ -57,7 +58,7 @@ const PUT = (req, res, next) => {
     write("post_deploy", post_deploy);
     write("post", post);
 
-    console.log(newPost);
+    
 
     res.status(204).json({
       status: 204,
@@ -77,7 +78,9 @@ const DELETE = (req, res, next) => {
     if (deleteId == -1) {
       throw new Error("no such id found");
     }
-    post.splice(deleteId, 1);
+
+    const [deletePost]= post.splice(deleteId, 1);
+    unlinkSync(resolve('uploads' , deletePost.image))
     write("post", post);
     res.status(204).json({
       status: 204,

@@ -2,45 +2,37 @@
     {
         "post_id": 1,
         "post_name": "Dasturlash",
-        "username": "ali",
+        "username": "alish",
         "telfon_number": "993440282",
         "tashkilotchi": "ITSM",
         "catigories": "IT",
         "transfer_day": "2002-08-09",
         "transfer_time": "15:00",
+        "image": "image-1685515392091-510104386.jpg",
+        "status": false
+    },
+    {
+        "post_id": 2,
+        "post_name": "SMM",
+        "username": "alis",
+        "telfon_number": "993444455",
+        "tashkilotchi": "ITSM",
+        "catigories": "IT",
+        "transfer_day": "2002-08-09",
+        "transfer_time": "16:00",
+        "image": "image-1685515439055-951893852.jpg",
         "status": false
     },
     {
         "post_id": 3,
         "post_name": "PM",
-        "username": "jami",
-        "telfon_number": "993447536",
-        "tashkilotchi": "ITSM",
-        "catigories": "IT",
-        "transfer_day": "2002-08-09",
-        "transfer_time": "15:00",
-        "status": false
-    },
-    {
-        "post_id": 4,
-        "post_name": "TM",
-        "username": "g'ani",
-        "telfon_number": "993448653",
-        "tashkilotchi": "ITSM",
-        "catigories": "IT",
-        "transfer_day": "2002-08-09",
-        "transfer_time": "15:00",
-        "status": false
-    },
-    {
-        "post_id": 5,
-        "post_name": "photoshop",
         "username": "vali",
-        "telfon_number": "993440207",
+        "telfon_number": "993444433",
         "tashkilotchi": "ITSM",
         "catigories": "IT",
         "transfer_day": "2002-08-09",
-        "transfer_time": "15:00",
+        "transfer_time": "16:30",
+        "image": "image-1685515474653-964015507.jpg",
         "status": false
     }
 ]
