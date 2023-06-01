@@ -1,0 +1,92 @@
+/admin/login:
+    post:
+      tags:
+        - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Login'
+        required: true    
+      responses:
+        '201':
+          description: successful 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: error message
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse' 
+
+/admin/posts:
+    get:
+      tags:
+        - admin
+      responses:
+        '201':
+          description: successful 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: error message
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+          - Bearer:
+              type: oauth2 
+      
+/admin/post/{post_id}:
+    delete:
+      tags:
+        - admin
+      parameters:
+        - name: post_id
+          in: path
+          required: true     
+      responses:
+        '200':
+          description: delete post
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: error message
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+          - Bearer:
+              type: oauth2
+    put:
+      tags:
+        - admin
+      parameters:
+        - name: post_id
+          in: path
+          required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: error message
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+          - Bearer:
+              type: oauth2

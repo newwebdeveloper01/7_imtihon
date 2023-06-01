@@ -1,0 +1,47 @@
+/user:
+    get:
+      tags:
+        - user
+      parameters:
+        - name: username
+          in: query
+        - name: transfer_day
+          in: query
+        - name: post_type
+          in: query
+        - name: post_name
+          in: query
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+   
+
+
+
+/user/post:
+    post:
+      tags:
+        - user
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Post'
+        required: true    
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: error message
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'

@@ -13,7 +13,7 @@ const GET = (req, res, next) => {
     let filterData={}
     if(sorov==0){
       
-      res.status(200).json({
+    return  res.status(200).json({
       status: 200,
       message: "zo'r",
       data: postData
@@ -43,7 +43,7 @@ const GET = (req, res, next) => {
 
 
 
-      res.status(200).json({
+return   res.status(200).json({
       status: 200,
       message: "zo'r",
       data: filterData
@@ -58,11 +58,6 @@ const GET = (req, res, next) => {
     return next(error);
   }
 };
-
-
-
-
-
 
 
 const POST = (req, res, next) => {

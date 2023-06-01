@@ -1,0 +1,33 @@
+components:
+  schemas:
+    Response:
+      type: object
+      properties:
+        static:
+          type: integer
+        message:
+          type: string
+        access__token:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              post_id:
+                type: integer
+              post_name:
+                type: string
+              username:
+                type: string
+              telfon_number:
+                type: integer
+    Login:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+    
+    

@@ -7,7 +7,7 @@ import upload from "../utils/multer.js";
 const router=Router();
 
 router.get( '/user' , controller.GET);
-router.post('/user' ,upload.single('image') , controller.POST);
+router.post('/user/post' ,upload.single('image') , controller.POST);
 
 
 

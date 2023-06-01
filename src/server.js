@@ -4,6 +4,7 @@ import morgan from "morgan";
 import { accessLogStream } from "./config.js";
 import errorHandler from "./middlewares/errorHandler.js";
 import adminRouter from './routers/admin.router.js';
+import SwaggerRouter from './swagger.js';
 
 const PORT=5000
 
@@ -16,6 +17,8 @@ app.use(express.json());
 
 app.use(morgan('combined' ,{skip: function (req, res) { return res.statusCode < 400 },
     stream: accessLogStream }))
+
+app.use('/api-docs',  SwaggerRouter)
 app.use(userRouter); 
 app.use(adminRouter);
 app.use(errorHandler);

@@ -73,8 +73,8 @@ const DELETE = (req, res, next) => {
   try {
     const post = read("post");
     const post_id = req.params.id;
+    console.log(post_id);
     const deleteId = post.findIndex((data) => data.post_id == post_id);
-    console.log(deleteId);
     if (deleteId == -1) {
       throw new Error("no such id found");
     }

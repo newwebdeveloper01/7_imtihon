@@ -1,0 +1,50 @@
+components:
+  schemas:
+    Response:
+      type: object
+      properties:
+        static:
+          type: integer
+        message:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              post_id:
+                type: integer
+              post_name:
+                type: string
+              username:
+                type: string
+              telfon_number:
+                type: integer
+    ErrorResponse:
+      type: object
+      properties:
+        static:
+          type: integer
+        name:
+          type: string
+        message:
+          type: string
+    Post:
+      type: object
+      properties:
+        post_name:
+          type: string
+        username:
+          type: string
+        telfon_number:
+          type: integer
+        tashkilotchi:
+          type: string
+        catigories:
+          type: string
+        transfer_day:
+          type: string
+        transfer_time:
+          type: string
+        image:
+          type: file

@@ -1,4 +1,4 @@
-import {LoginSchema , RegistorSchema} from '../utils/validation.js';
+import {LoginSchema , PostSchema } from '../utils/validation.js';
 
 
 export default (req , res  , next )=>{
@@ -8,7 +8,7 @@ export default (req , res  , next )=>{
            if(error) throw Error(error)
         }
         if ( req.url=='/registor'  && req.method=='POST'){
-            const {error}= RegistorSchema.validate( {avatar:req.files.avatar.name, ...req.body})
+            const {error}= PostSchema.validate( {avatar:req.files.avatar.name, ...req.body})
             if(error) throw Error(error)
          }
         next()
