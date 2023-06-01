@@ -9,7 +9,7 @@ const GET = (req, res, next) => {
   try {
     const postData = read("post_deploy");
     const sorov=Object.keys(req.query);
-    const {transfer_day ,  username , post_name , post_type }=req.query;
+    const {transfer_day ,  username , post_name , post_type , page }=req.query;
     let filterData={}
     if(sorov==0){
       
@@ -35,6 +35,11 @@ const GET = (req, res, next) => {
   else if (post_type){
       
   filterData=postData.filter(post=>post.post_type.toLowerCase()==post_type.toLowerCase());
+}
+
+else if (page){
+      
+  filterData=postData.slice((page-1)*4, page*4)
 }
     
     

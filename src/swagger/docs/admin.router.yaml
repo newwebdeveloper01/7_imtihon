@@ -50,6 +50,7 @@
       parameters:
         - name: post_id
           in: path
+          description: id kiriting
           required: true     
       responses:
         '200':
@@ -73,6 +74,7 @@
       parameters:
         - name: post_id
           in: path
+          description: deploy qilmoqchi bo'lgan post  id sini  kiriting
           required: true
       responses:
         '200':
